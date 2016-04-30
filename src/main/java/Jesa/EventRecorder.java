@@ -14,8 +14,11 @@ public class EventRecorder
         this.records = new ArrayList();
     }
 
-    public void record(Object event)
+    public void record(Object event) throws IllegalArgumentException
     {
+        if(event == null)
+            throw new IllegalArgumentException("The event can not be null.");
+
         this.records.add(event);
     }
 

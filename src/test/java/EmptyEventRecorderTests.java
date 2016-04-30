@@ -29,6 +29,12 @@ public class EmptyEventRecorderTests {
         Assert.assertArrayEquals(new Object[0], result);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void recordEventCanNotBeNull()
+    {
+        sut.record(null);
+    }
+
     @Test
     public void recordHasExpectedResult()
     {
