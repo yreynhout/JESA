@@ -1,9 +1,15 @@
-*.class
-
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# IntelliJ Files #
+*.iml
+.idea
+.classpath
+.project
+.DS_Store
+
 # Package Files #
+target/
 *.jar
 *.war
 *.ear
