@@ -11,6 +11,10 @@
       <entry name="!?*.flex" />
       <entry name="!?*.kt" />
       <entry name="!?*.clj" />
+<<<<<<< HEAD
+=======
+      <entry name="!?*.aj" />
+>>>>>>> master
     </wildcardResourcePatterns>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="false">
@@ -21,11 +25,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+<<<<<<< HEAD
         <module name="JESA" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="JESA" target="1.5" />
+=======
+        <module name="jesa" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jesa" target="1.8" />
+>>>>>>> master
     </bytecodeTargetLevel>
   </component>
 </project>

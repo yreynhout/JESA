@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/JESA.iml" filepath="$PROJECT_DIR$/JESA.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/jesa.iml" filepath="$PROJECT_DIR$/jesa.iml" />
+>>>>>>> master
     </modules>
   </component>
 </project>
