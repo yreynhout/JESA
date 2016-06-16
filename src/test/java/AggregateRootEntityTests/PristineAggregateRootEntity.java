@@ -1,15 +1,13 @@
 package AggregateRootEntityTests;
 
-import core.AggregateRootEntity;
-
-import java.util.Collections;
-import java.util.Iterator;
+import core.AggregateRootEntityBase;
 
 /**
  * empty implementation; implementation not required for tests
  */
-public class PristineAggregateRootEntity implements AggregateRootEntity {
-    public Iterator<Object> getChanges() {
-        return (Iterator<Object>) Collections.EMPTY_LIST;
+public class PristineAggregateRootEntity extends AggregateRootEntityBase {
+
+    PristineAggregateRootEntity() {
+        super();
     }
 }
