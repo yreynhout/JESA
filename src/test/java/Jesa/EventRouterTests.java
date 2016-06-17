@@ -1,6 +1,5 @@
 package Jesa;
 
-import com.google.common.base.VerifyException;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
@@ -16,10 +15,9 @@ public class EventRouterTests {
         assertThat(sut, instanceOf(InstanceEventRouter.class));
     }
 
-    @Test(expected = VerifyException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void configureRouteHandlerCannotBeNull() {
         sut.configureRoute(null, null);
-        //sut.configureRoute(Object.class, null);
     }
 
     @Test
@@ -28,5 +26,10 @@ public class EventRouterTests {
         sut.configureRoute(Object.class, (event) -> called[0] = true);
         sut.route(new Object());
         assertThat(called[0], is(true));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void eventCannotBeNull() {
+        sut.route(null);
     }
 }
