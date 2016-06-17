@@ -1,4 +1,4 @@
-package core;
+package Jesa;
 
 /**
  * Initializes an aggregate

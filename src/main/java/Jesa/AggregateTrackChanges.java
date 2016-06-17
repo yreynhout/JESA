@@ -1,4 +1,4 @@
-package core;
+package Jesa;
 
 /**
  * Keeps track of changes to an aggregate. ie, records the events

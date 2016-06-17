@@ -1,10 +1,8 @@
-package core;
+package Jesa;
 
 /**
  * Base class for aggregate root entities, provides basic change tracking capabilities.
  */
-
-import Jesa.EventRecorder;
 
 public abstract class AggregateRootEntityBase implements AggregateRootEntity {
 

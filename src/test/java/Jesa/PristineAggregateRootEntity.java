@@ -1,6 +1,6 @@
-package AggregateRootEntityTests;
+package Jesa;
 
-import core.AggregateRootEntityBase;
+import Jesa.AggregateRootEntityBase;
 
 /**
  * empty implementation; implementation not required for tests

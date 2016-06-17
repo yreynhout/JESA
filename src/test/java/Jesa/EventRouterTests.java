@@ -1,8 +1,6 @@
-package core.AggregateRootEntityTests;
+package Jesa;
 
-import Jesa.EventRouter;
 import com.google.common.base.VerifyException;
-import core.InstanceEventRouter;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.instanceOf;

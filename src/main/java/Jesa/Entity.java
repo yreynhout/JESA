@@ -1,6 +1,4 @@
-package core;
-
-import Jesa.EventRouter;
+package Jesa;
 
 import java.util.function.Consumer;
 

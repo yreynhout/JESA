@@ -1,10 +1,6 @@
-package AggregateRootEntityTests;
+package Jesa;
 
-import core.AggregateRootEntity;
-import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Collections;
 
 import static org.junit.Assert.*;
 
