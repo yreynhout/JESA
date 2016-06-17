@@ -32,4 +32,10 @@ public class EventRouterTests {
     public void eventCannotBeNull() {
         sut.route(null);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void cannotAddDuplicateRouteHandler() {
+        sut.configureRoute(Object.class, (event) -> {});
+        sut.configureRoute(Object.class, (event) -> {});
+    }
 }

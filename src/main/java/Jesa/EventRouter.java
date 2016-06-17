@@ -1,17 +1,19 @@
 package Jesa;
 
-import java.util.HashMap;
+import com.google.common.collect.Maps;
+
+import java.util.Map;
 import java.util.function.Consumer;
 
 /**
  * Routes an event to a configured state handler.
  */
 public class EventRouter implements InstanceEventRouter {
-    private final HashMap<Class, Consumer<Object>> handlers;
+    private final Map<Class, Consumer<Object>> handlers;
 
     public EventRouter()
     {
-        this.handlers = new HashMap<>();
+        this.handlers = Maps.newHashMap();
     }
 
     @Override
@@ -21,6 +23,8 @@ public class EventRouter implements InstanceEventRouter {
             throw new IllegalArgumentException("The event class can not be null.");
         if(eventHandler == null)
             throw new IllegalArgumentException("The event handler can not be null.");
+        if(handlers.containsKey(eventClass))
+            throw new IllegalArgumentException(String.format("The event handler [%s] already exists.", eventClass));
 
         this.handlers.put(eventClass, (event) -> eventHandler.accept((T)event));
     }

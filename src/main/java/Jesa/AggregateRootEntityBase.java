@@ -6,25 +6,51 @@ package Jesa;
 
 public abstract class AggregateRootEntityBase implements AggregateRootEntity {
 
-    private final EventRecorder _eventRecorder;
+    private final EventRecorder eventRecorder;
+    private final InstanceEventRouter eventRouter;
 
     protected AggregateRootEntityBase() {
-        _eventRecorder = new EventRecorder();
+
+        eventRecorder = new EventRecorder();
+        eventRouter = new EventRouter();
     }
 
     public void initialize(Iterable<Object> events) {
+        if(events == null)
+            throw new IllegalArgumentException("Argument Events cannot be null");
+        if(hasChanges())
+            throw new IllegalArgumentException("Cannot initialize an AggregateRootEntity that already has changes.");
 
+        for(Object event : events) {
+            play(event);
+        }
     }
 
     public boolean hasChanges() {
-        return _eventRecorder.hasEvents();
+        return eventRecorder.hasEvents();
     }
 
     public Object[] getChanges() {
-        return _eventRecorder.toArray();
+        return eventRecorder.toArray();
     }
 
     public void clearChanges() {
-        _eventRecorder.clear();
+        eventRecorder.clear();
+    }
+
+    public void applyChange(Object event) {
+        if(event == null)
+            throw new IllegalArgumentException("The event cannot be null.");
+
+        play(event);
+        record(event);
+    }
+
+    private void play(Object event) {
+        eventRouter.route(event);
+    }
+
+    private void record(Object event) {
+        eventRecorder.record(event);
     }
 }
