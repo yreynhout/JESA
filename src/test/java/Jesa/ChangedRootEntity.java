@@ -5,8 +5,9 @@ package Jesa;
  */
 public class ChangedRootEntity extends AggregateRootEntityBase {
 
+    public static final Object[] changes = new Object[] {new Object(), new Object()};
+
     public ChangedRootEntity() {
-        Object[] changes = new Object[] {new Object(), new Object()};
 
         for(Object event : changes) {
             applyChange(event);
