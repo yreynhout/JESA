@@ -3,6 +3,8 @@ package Jesa;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertThat;
@@ -31,5 +33,10 @@ public class WithChangedInstance {
 
         assertThat(rootEntity.hasChanges(), is(false));
         assertThat(rootEntity.getChanges().length, is(0));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void initializeThrows() {
+        sut.initialize(Arrays.asList(new Object(), new Object()));
     }
 }

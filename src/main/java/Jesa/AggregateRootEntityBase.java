@@ -1,5 +1,7 @@
 package Jesa;
 
+import java.util.function.Consumer;
+
 /**
  * Base class for aggregate root entities, provides basic change tracking capabilities.
  */
@@ -24,6 +26,13 @@ public abstract class AggregateRootEntityBase implements AggregateRootEntity {
         for(Object event : events) {
             play(event);
         }
+    }
+
+    public <T> void register(Class<T> eventType, Consumer<T> handler) {
+        if(handler == null)
+            throw new IllegalArgumentException("Argument handler cannot be null");
+
+        eventRouter.configureRoute(eventType, handler);
     }
 
     public boolean hasChanges() {
