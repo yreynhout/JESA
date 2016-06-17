@@ -4,16 +4,14 @@ package core;
  * Base class for aggregate root entities, provides basic change tracking capabilities.
  */
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import Jesa.EventRecorder;
 
 public abstract class AggregateRootEntityBase implements AggregateRootEntity {
 
-    private final List<Object> _eventRecorder;
+    private final EventRecorder _eventRecorder;
 
-    AggregateRootEntityBase() {
-        _eventRecorder = Collections.emptyList();
+    protected AggregateRootEntityBase() {
+        _eventRecorder = new EventRecorder();
     }
 
     public void initialize(Iterable<Object> events) {
@@ -21,11 +19,11 @@ public abstract class AggregateRootEntityBase implements AggregateRootEntity {
     }
 
     public boolean hasChanges() {
-        return !_eventRecorder.isEmpty();
+        return _eventRecorder.hasEvents();
     }
 
-    public Iterator<Object> getChanges() {
-        return _eventRecorder.iterator();
+    public Object[] getChanges() {
+        return _eventRecorder.toArray();
     }
 
     public void clearChanges() {

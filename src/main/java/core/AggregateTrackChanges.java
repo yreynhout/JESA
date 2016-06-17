@@ -1,7 +1,5 @@
 package core;
 
-import java.util.Iterator;
-
 /**
  * Keeps track of changes to an aggregate. ie, records the events
  * that represent state changes.
@@ -18,7 +16,7 @@ public interface AggregateTrackChanges {
      * Get the changes applied to this instance
      * @return an iterable sequence of events that have been applied.
      */
-    Iterator<Object> getChanges();
+    Object[] getChanges();
 
     /**
      * Clears the events.
