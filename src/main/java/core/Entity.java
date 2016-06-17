@@ -1,5 +1,7 @@
 package core;
 
+import Jesa.EventRouter;
+
 import java.util.function.Consumer;
 
 /**
@@ -9,7 +11,7 @@ import java.util.function.Consumer;
 public abstract class Entity implements InstanceEventRouter {
 
     private final Consumer<Object> applier;
-    private final InstanceEventRouter router;
+    private final EventRouter router;
 
     protected Entity(Consumer<Object> applier) {
         this.applier = applier;

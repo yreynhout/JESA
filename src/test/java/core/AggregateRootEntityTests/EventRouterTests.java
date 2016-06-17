@@ -1,7 +1,7 @@
 package core.AggregateRootEntityTests;
 
+import Jesa.EventRouter;
 import com.google.common.base.VerifyException;
-import core.EventRouter;
 import core.InstanceEventRouter;
 import org.junit.Test;
 
@@ -26,13 +26,13 @@ public class EventRouterTests {
     @Test(expected = VerifyException.class)
     public void configureRouteHandlerCannotBeNull() {
         sut.configureRoute(null, null);
-        sut.configureRoute("event", null);
+        sut.configureRoute(Object.class, null);
     }
 
     @Test
     public void configureRouteHandlesEventAsExpected() {
         final boolean[] called = {false};
-        sut.configureRoute("Object", (event) -> called[0] = true);
+        sut.configureRoute(Object.class, (event) -> called[0] = true);
         sut.route(new Object());
         assertThat(called[0], is(true));
     }
