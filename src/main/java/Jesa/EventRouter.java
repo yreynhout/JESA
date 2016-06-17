@@ -4,10 +4,9 @@ import java.util.HashMap;
 import java.util.function.Consumer;
 
 /**
- * Created by Yves on 30/04/2016.
+ * Routes an event to a configured state handler.
  */
-public class EventRouter
-{
+public class EventRouter implements InstanceEventRouter {
     private final HashMap<Class, Consumer<Object>> handlers;
 
     public EventRouter()
@@ -15,6 +14,7 @@ public class EventRouter
         this.handlers = new HashMap<>();
     }
 
+    @Override
     public <T> void configureRoute(Class<T> eventClass, Consumer<T> eventHandler) throws IllegalArgumentException
     {
         if(eventClass == null)
@@ -25,6 +25,7 @@ public class EventRouter
         this.handlers.put(eventClass, (event) -> eventHandler.accept((T)event));
     }
 
+    @Override
     public void route(Object event) throws IllegalArgumentException
     {
         if(event == null)

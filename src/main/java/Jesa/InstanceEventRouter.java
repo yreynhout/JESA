@@ -1,13 +1,12 @@
 package Jesa;
 
+import java.util.function.Consumer;
+
 /**
- * Routes an event to a configure state handler.
+ * Implementors route events to configured event handlers
  */
 public interface InstanceEventRouter {
+    <T> void configureRoute(Class<T> eventClass, Consumer<T> eventHandler) throws IllegalArgumentException;
 
-    /**
-     * Routes the specified event to a configured state handler, if any.
-     * @param event The event to route.
-     */
-    void route(Object event);
+    void route(Object event) throws IllegalArgumentException;
 }

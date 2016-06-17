@@ -16,15 +16,10 @@ public class EventRouterTests {
         assertThat(sut, instanceOf(InstanceEventRouter.class));
     }
 
-    @Test
-    public void IsConfigurableEventRouter() {
-        assertThat(sut, instanceOf(InstanceEventRouter.class));
-    }
-
     @Test(expected = VerifyException.class)
     public void configureRouteHandlerCannotBeNull() {
         sut.configureRoute(null, null);
-        sut.configureRoute(Object.class, null);
+        //sut.configureRoute(Object.class, null);
     }
 
     @Test
