@@ -19,7 +19,7 @@ public class WithRegisteredEventHandlerInstance {
     @Test
     public void initializeCallsEventHandler() {
         List<Object> expectedEvents = Arrays.asList(new Object(), new Object());
-        sut.applyEvent(expectedEvents);
+        expectedEvents.forEach(sut::applyEvent);
 
         assertThat(sut.getEventCounter(), is(2));
         assertArrayEquals(expectedEvents.toArray(), sut.getRoutedEvents().toArray());
