@@ -25,4 +25,10 @@ public class RegisteredHandlerRootEntity extends AggregateRootEntityBase {
     public List<Object> getRoutedEvents() {
         return routedEvents;
     }
+
+    @Override
+    public void clearChanges() {
+        eventCounter = 0;
+        super.clearChanges();
+    }
 }

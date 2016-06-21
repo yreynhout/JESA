@@ -35,4 +35,19 @@ public class WithRegisteredEventHandlerInstance {
         assertThat(sut.getEventCounter(), is(2));
         assertArrayEquals(newEvents.toArray(), sut.getRoutedEvents().toArray());
     }
+
+    @Test
+    public void doesNotReflectEventsAfterClearChangesIsCalled() {
+        List<Object> newEvents = Arrays.asList(new Object(), new Object());
+        newEvents.forEach(sut::applyEvent);
+
+        assertThat(sut.hasChanges(), is(true));
+        assertThat(sut.getEventCounter(), is(2));
+
+        sut.clearChanges();
+
+        assertThat(sut.hasChanges(), is(false));
+        assertThat(sut.getEventCounter(), is(0));
+        assertThat(sut.getChanges().length, is(0));
+    }
 }
