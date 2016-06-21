@@ -47,13 +47,19 @@ public abstract class AggregateRootEntityBase implements AggregateRootEntity {
         eventRecorder.clear();
     }
 
-    public void applyChange(Object event) {
+    protected void applyChange(Object event) {
         if(event == null)
             throw new IllegalArgumentException("The event cannot be null.");
 
+        beforeApplyChanges(event);
         play(event);
         record(event);
+        afterApplyChanges(event);
     }
+
+    protected void beforeApplyChanges(Object event) {}
+
+    protected void afterApplyChanges(Object event) {}
 
     private void play(Object event) {
         eventRouter.route(event);

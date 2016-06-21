@@ -50,4 +50,9 @@ public class WithRegisteredEventHandlerInstance {
         assertThat(sut.getEventCounter(), is(0));
         assertThat(sut.getChanges().length, is(0));
     }
+
+    @Test
+    public void beforeApplyChangesGetCalledBeforeChangesApplied() {
+
+    }
 }
