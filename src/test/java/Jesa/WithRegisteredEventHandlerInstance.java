@@ -19,9 +19,20 @@ public class WithRegisteredEventHandlerInstance {
     @Test
     public void initializeCallsEventHandler() {
         List<Object> expectedEvents = Arrays.asList(new Object(), new Object());
-        expectedEvents.forEach(sut::applyEvent);
+        sut.initialize(expectedEvents);
 
+        assertThat(sut.hasChanges(), is(false)); //the initialize method does not treat these events as new events.
         assertThat(sut.getEventCounter(), is(2));
         assertArrayEquals(expectedEvents.toArray(), sut.getRoutedEvents().toArray());
+    }
+
+    @Test
+    public void newEventsReflectedWhenNewEventsApplied() {
+        List<Object> newEvents = Arrays.asList(new Object(), new Object());
+        newEvents.forEach(sut::applyEvent);
+
+        assertThat(sut.hasChanges(), is(true)); //these are new events
+        assertThat(sut.getEventCounter(), is(2));
+        assertArrayEquals(newEvents.toArray(), sut.getRoutedEvents().toArray());
     }
 }
