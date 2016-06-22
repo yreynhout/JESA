@@ -1,3 +1,5 @@
+package Jesa;
+
 import Jesa.EventRecorder;
 import org.junit.Assert;
 import org.junit.Test;

@@ -31,4 +31,8 @@ public class EventRecorder
     {
         this.records.clear();
     }
+
+    public boolean hasEvents() {
+        return !records.isEmpty();
+    }
 }
