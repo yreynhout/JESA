@@ -1,4 +1,6 @@
-package Jesa;
+package Jesa.AggregateRootEntityTests;
+
+import Jesa.AggregateRootEntityBase;
 
 /**
  * Created by rsmith on 6/17/16.

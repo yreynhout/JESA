@@ -1,4 +1,6 @@
-package Jesa;
+package Jesa.AggregateRootEntityTests;
+
+import Jesa.AggregateRootEntityBase;
 
 import java.util.ArrayList;
 import java.util.List;
