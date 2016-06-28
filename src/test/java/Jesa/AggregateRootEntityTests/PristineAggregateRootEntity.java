@@ -1,4 +1,4 @@
-package Jesa;
+package Jesa.AggregateRootEntityTests;
 
 import Jesa.AggregateRootEntityBase;
 
