@@ -1,6 +1,6 @@
 package Jesa.AggregateRootEntityTests;
 
-import Jesa.AggregateRootEntityBase;
+import Jesa.core.AggregateRootEntityBase;
 
 public class InterceptorAggregateRootEntity extends AggregateRootEntityBase {
     private boolean beforeChangesWasCalled = false;

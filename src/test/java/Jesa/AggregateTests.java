@@ -1,5 +1,7 @@
 package Jesa;
 
+import Jesa.core.Aggregate;
+import Jesa.core.AggregateRootEntity;
 import com.pholser.junit.quickcheck.Property;
 import com.pholser.junit.quickcheck.runner.JUnitQuickcheck;
 import org.junit.runner.RunWith;

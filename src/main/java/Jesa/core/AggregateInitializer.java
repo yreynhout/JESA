@@ -1,4 +1,4 @@
-package Jesa;
+package Jesa.core;
 
 /**
  * Initializes an aggregate

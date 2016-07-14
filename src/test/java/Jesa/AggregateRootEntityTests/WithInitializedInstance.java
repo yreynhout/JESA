@@ -1,6 +1,6 @@
 package Jesa.AggregateRootEntityTests;
 
-import Jesa.AggregateRootEntityBase;
+import Jesa.core.AggregateRootEntityBase;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;

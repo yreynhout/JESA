@@ -1,7 +1,7 @@
 package Jesa.AggregateRootEntityTests;
 
 
-import Jesa.AggregateRootEntity;
+import Jesa.core.AggregateRootEntity;
 import org.junit.Test;
 
 import java.util.Arrays;

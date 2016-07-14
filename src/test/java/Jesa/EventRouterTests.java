@@ -1,5 +1,7 @@
 package Jesa;
 
+import Jesa.core.EventRouter;
+import Jesa.core.InstanceEventRouter;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.instanceOf;

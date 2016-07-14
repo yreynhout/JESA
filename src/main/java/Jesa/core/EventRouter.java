@@ -1,4 +1,4 @@
-package Jesa;
+package Jesa.core;
 
 import com.google.common.collect.Maps;
 

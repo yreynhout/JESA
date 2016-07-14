@@ -1,6 +1,6 @@
 package Jesa.EntityTests;
 
-import Jesa.Entity;
+import Jesa.core.Entity;
 import org.junit.Test;
 
 import java.util.ArrayList;

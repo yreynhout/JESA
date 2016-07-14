@@ -1,4 +1,4 @@
-package Jesa;
+package Jesa.core;
 
 /**
  * Marker interface for an Aggregate Root Entity

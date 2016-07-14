@@ -1,6 +1,6 @@
 package Jesa;
 
-import Jesa.EventRecorder;
+import Jesa.core.EventRecorder;
 import org.junit.Assert;
 import org.junit.Test;
 

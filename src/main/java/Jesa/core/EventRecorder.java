@@ -1,4 +1,4 @@
-package Jesa;
+package Jesa.core;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package Jesa;
+package Jesa.core;
 
 public class Aggregate {
     private String identifier;

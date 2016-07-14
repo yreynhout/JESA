@@ -1,4 +1,4 @@
-import Jesa.EventRouter;
+import Jesa.core.EventRouter;
 import org.junit.Assert;
 import org.junit.Test;
 
